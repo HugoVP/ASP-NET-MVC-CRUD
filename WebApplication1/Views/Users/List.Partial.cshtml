@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication1.Models.Clients>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apllido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Descuento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <th scope="row">@client.Id</th>
+                <td>@client.FirstName</td>
+                <td>@client.LastName</td>
+                <td>@client.Email</td>
+                <td>@client.Discount</td>
+            </tr>
+        }
+    </tbody>
+</table>
