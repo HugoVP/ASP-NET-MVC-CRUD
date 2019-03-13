@@ -12,6 +12,8 @@ namespace WebApplication1.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class SalesEntities : DbContext
     {
@@ -27,5 +29,18 @@ namespace WebApplication1.Models
     
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<ClientSales> ClientSales { get; set; }
+    
+        public virtual ObjectResult<Search_Result> Search(string input, Nullable<bool> active)
+        {
+            var inputParameter = input != null ?
+                new ObjectParameter("Input", input) :
+                new ObjectParameter("Input", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("Active", active) :
+                new ObjectParameter("Active", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Result>("Search", inputParameter, activeParameter);
+        }
     }
 }

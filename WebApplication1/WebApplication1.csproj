@@ -155,6 +155,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sales.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Search_Result.cs">
+      <DependentUpon>Sales.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
