@@ -12,12 +12,16 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Clients
+    public partial class ClientSales
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public Nullable<int> Discount { get; set; }
+        public string Product { get; set; }
+        public Nullable<System.DateTime> SaleDate { get; set; }
+        public Nullable<decimal> ClientId { get; set; }
+        public Nullable<decimal> Quantity { get; set; }
     }
 }

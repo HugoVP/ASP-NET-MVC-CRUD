@@ -1,5 +1,12 @@
 ﻿@model IEnumerable<WebApplication1.Models.Clients>
 
+@*@using (Html.BeginForm("DeleteAsync", "Users", FormMethod.Post, new { @id = "deleteClientForm" }))*@
+@using (Html.BeginForm("DeleteAsync", "Users", FormMethod.Post, new { @id = "deleteClientForm" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" value="0" name="id" />
+}
+
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -8,6 +15,7 @@
             <th scope="col">Apllido</th>
             <th scope="col">Email</th>
             <th scope="col">Descuento</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +27,43 @@
                 <td>@client.LastName</td>
                 <td>@client.Email</td>
                 <td>@client.Discount</td>
+                <td>
+                    <div class="row">
+                        <div class="col">
+                            <a href="@Url.Action("Index", "Users", new { id = client.Id })" class="btn" type="button" data-toggle="tooltip" data-placement="right" title="Editar">
+                                <i class="fas fa-edit text-info"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <button onclick="setId(@client.Id)" class="btn" type="button" data-toggle="modal" data-placement="left" title="Eliminar" data-target="#warningModal">
+                                <i class="fas fa-trash-alt text-danger"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Desea eliminar el usuario?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="deleteClient()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

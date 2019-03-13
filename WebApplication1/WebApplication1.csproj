@@ -137,6 +137,9 @@
       <DependentUpon>Sales.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Clients.Partial.cs" />
+    <Compile Include="Models\ClientSales.cs">
+      <DependentUpon>Sales.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Sales.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +158,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\alertifyjs\alertify.css" />
+    <Content Include="Content\alertifyjs\alertify.min.css" />
+    <Content Include="Content\alertifyjs\alertify.rtl.css" />
+    <Content Include="Content\alertifyjs\alertify.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.min.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\bootstrap.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\default.css" />
+    <Content Include="Content\alertifyjs\themes\default.min.css" />
+    <Content Include="Content\alertifyjs\themes\default.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\default.rtl.min.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.min.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.rtl.css" />
+    <Content Include="Content\alertifyjs\themes\semantic.rtl.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -169,11 +188,14 @@
       <LastGenOutput>Sales.Context.cs</LastGenOutput>
       <DependentUpon>Sales.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\Sales.edmx.sql" />
     <Content Include="Models\Sales.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sales.edmx</DependentUpon>
       <LastGenOutput>Sales.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\alertify.js" />
+    <Content Include="Scripts\alertify.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -244,7 +266,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\List.Partial.cshtml" />
-    <Content Include="Views\Users\Save.Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

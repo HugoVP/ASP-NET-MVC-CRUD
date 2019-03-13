@@ -26,5 +26,6 @@ namespace WebApplication1.Models
         }
     
         public virtual DbSet<Clients> Clients { get; set; }
+        public virtual DbSet<ClientSales> ClientSales { get; set; }
     }
 }

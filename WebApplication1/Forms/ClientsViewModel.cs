@@ -33,5 +33,19 @@ namespace WebApplication1.Forms
                 Discount = this.Discount
             };
         }
+
+        public ClientsViewModel()
+        {
+
+        }
+
+        public ClientsViewModel(Clients client)
+        {
+            Id = client.Id;
+            FirstName = client.FirstName;
+            LastName = client.LastName;
+            Email = client.Email;
+            Discount = client.Discount ?? 0;
+        }
     }
 }
