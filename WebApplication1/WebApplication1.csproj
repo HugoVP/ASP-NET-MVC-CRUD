@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Forms\ClientsViewModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -269,6 +270,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\List.Partial.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\TableResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

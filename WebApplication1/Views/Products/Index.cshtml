@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <input type="text" placeholder="Buscar producto" />
+    </div>
+</div>
+
+@{ Html.RenderAction("TableResult"); }

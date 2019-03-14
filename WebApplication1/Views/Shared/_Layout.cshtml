@@ -18,7 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Usuarios</a>
+                    <a class="nav-link" href="@Url.Action("Index", "Users")">Usuarios</a>
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Productos", "Index", "Products", null, new { @class = "nav-link" })
                 </li>
             </ul>
         </div>
